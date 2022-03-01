@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
 }
+def roomVersion = "2.4.2"
 
 android {
     compileSdk 31
@@ -35,13 +36,39 @@ android {
     }
 }
 
+def coroutines = '1.5.2'
+def lifecycleVersion = '2.4.0'
+
+
 dependencies {
 
     implementation("androidx.room:room-ktx:2.4.2")
     implementation "androidx.work:work-runtime-ktx:2.7.1"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "androidx.room:room-compiler:2.4.2"
-    implementation("androidx.room:room-rxjava2:2.4.2")
-    implementation("androidx.room:room-rxjava3:2.4.2")
+    implementation("androidx.room:room-runtime:2.4.2")
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$roomVersion"
+
+    // Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.0"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
+    implementation("androidx.room:room-runtime:$roomVersion")
+    annotationProcessor("androidx.room:room-compiler:$roomVersion")
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
+    kapt("androidx.room:room-compiler:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
+    implementation("androidx.room:room-rxjava2:$roomVersion")
+    implementation("androidx.room:room-rxjava3:$roomVersion")
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.1"
+
     implementation "androidx.navigation:navigation-fragment-ktx:2.4.1"
     implementation "androidx.navigation:navigation-ui-ktx:2.4.1"
     // Coroutines

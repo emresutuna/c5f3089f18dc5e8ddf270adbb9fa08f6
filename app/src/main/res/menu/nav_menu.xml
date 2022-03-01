@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home_page"
+        android:contentDescription="home"
+        android:icon="@drawable/space_ship_menu_icon"
+        android:title="İstasyon" />
+
+    <item
+        android:id="@+id/fav_page"
+        android:contentDescription="favs"
+        android:icon="@drawable/ic_baseline_star_24"
+        android:title="Favoriler" />
+</menu>
